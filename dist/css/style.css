@@ -1,3 +1,4 @@
+/* --- PODSTAWOWE --- */
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -55,9 +56,22 @@ nav a:hover { color: #4B4B4B; border-bottom: 2px solid #E67E22; }
   position: relative;
   height: 100vh;
   display: flex; justify-content: center; align-items: center;
-  text-align: center;
-  color: white;
-  overflow: hidden;
+  text-align: center; color: white; overflow: hidden;
+}
+.hero-video::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 100%; height: 60%;
+  background: url('../img/maska.png') top right no-repeat;
+  background-size: auto 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+.hero-video::after {
+  content: '';
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4); z-index: -1;
 }
 #bgvideo {
   position: absolute; top: 50%; left: 50%;
@@ -66,23 +80,6 @@ nav a:hover { color: #4B4B4B; border-bottom: 2px solid #E67E22; }
   width: auto; height: auto; z-index: -2;
   background-size: cover;
 }
-/* Maska responsywna */
-.hero-video::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('../img/maska.png') top right no-repeat;
-  background-size: cover;
-  z-index: -1;
-  pointer-events: none;
-}
-.hero-video::after {
-  content: ''; position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0,0,0,0.4); z-index: -1;
-}
 .hero-content h1 {
   font-family: 'Fredoka', sans-serif;
   font-size: 6vw;
@@ -90,14 +87,12 @@ nav a:hover { color: #4B4B4B; border-bottom: 2px solid #E67E22; }
 }
 .hero-content p { font-size: 1.5rem; }
 
-/* --- Palmy dekoracyjne tylko w sekcji wideo --- */
-.hero-video .palma {
+/* --- Palmy na dole wideo (w %) --- */
+.palma {
   position: absolute;
   bottom: 0;
-  width: 15vw;
-  max-width: 220px;
-  min-width: 120px;
-  height: auto;
+  width: 18vw;
+  height: 33vw;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -105,8 +100,8 @@ nav a:hover { color: #4B4B4B; border-bottom: 2px solid #E67E22; }
   opacity: 0.8;
   pointer-events: none;
 }
-.hero-video .palma-left { left: 0; background-image: url("../img/palma-left.png"); }
-.hero-video .palma-right { right: 0; background-image: url("../img/palma-right.png"); }
+.palma-left { left: 0; background-image: url("../img/palma-left.png"); }
+.palma-right { right: 0; background-image: url("../img/palma-right.png"); }
 
 /* --- Balony --- */
 .atrakcja-gif {
@@ -151,12 +146,13 @@ nav a:hover { color: #4B4B4B; border-bottom: 2px solid #E67E22; }
 .section-about {
   display: flex; align-items: center; gap: 50px;
   text-align: left; margin-top: 80px;
+  position: relative;
 }
-.about-text { flex-basis: 50%; }
+.about-text { flex-basis: 50%; z-index: 2; position: relative; }
 .about-image-wrapper {
   flex-basis: 50%; position: relative;
   display: flex; justify-content: center; align-items: center;
-  min-height: 400px;
+  min-height: 400px; z-index: 1;
 }
 .about-shape {
   position: absolute; width: 100%; height: 100%;
@@ -164,20 +160,20 @@ nav a:hover { color: #4B4B4B; border-bottom: 2px solid #E67E22; }
   border-radius: 68% 32% 54% 46% / 43% 53% 47% 57%;
   transform: rotate(-15deg);
 }
-.about-image { width: 80%; border-radius: 12px; position: relative; z-index: 10; }
+.about-image { width: 80%; border-radius: 12px; position: relative; }
 
-/* --- Ogólne sekcje --- */
-.container { padding: 40px 20px; max-width: 1100px; margin: auto; }
-.container-v2 {background-image: url('../img/Projekt bez nazwy (14).png'); background-repeat: no-repeat; background-position: top center; }
-.container-v3 {background-image: url('../img/Projekt bez nazwy (16).png'); background-repeat: no-repeat; background-position: top center; }
-.section { margin-bottom: 40px; }
+/* --- Ogólne sekcje i mniejsze odstępy --- */
+.container { padding: 20px 20px; max-width: 1100px; margin: auto; }
+.container-v2 { background-image: url('../img/Projekt bez nazwy (14).png'); background-repeat: no-repeat; background-position: top center; }
+.container-v3 { background-image: url('../img/Projekt bez nazwy (16).png'); background-repeat: no-repeat; background-position: top center; }
+.section { margin-bottom: 20px; }
 .section h2 {
   font-family: 'Fredoka', sans-serif;
   color: #E67E22;
   font-size: 42px;
   margin-bottom: 20px;
 }
-hr { border: none; height: 2px; background-color: #EAEAEA; margin: 80px 0; }
+hr { border: none; height: 2px; background-color: #EAEAEA; margin: 40px 0; }
 .separator { width: 100%; height: 280px; background: url('../img/przejscie.png') no-repeat center; background-size: cover; }
 .contact-div { padding:10%; margin: 0; background: #f9c223; }
 footer { background-color: #4B4B4B; color: #fff; text-align: center; padding: 30px; }
@@ -207,7 +203,7 @@ header.nav-open .hamburger::after { transform: rotate(90deg) translate(0, -10px)
 .overlay i { font-size: 36px; margin-top: 5px; }
 
 /* --- RESPONSYWNOŚĆ --- */
-@media (max-width: 1024px) {
+@media (max-width: 800px) {
   header { padding: 10px 20px; background-color: #fff !important; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
   .nav-toggle { display: block; }
   header:not(.scrolled) .logo-link { transform: scale(1) translate(0,0); }
@@ -220,30 +216,46 @@ header.nav-open .hamburger::after { transform: rotate(90deg) translate(0, -10px)
 
   .central-image { display: none; }
   .balloons-container {
-    width: 100%; max-width: 1200px; height: auto; margin: 60px auto;
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 0 20px; box-sizing: border-box;
+    width: 100%; max-width: 1200px; height: auto; margin: 60px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 0 20px; box-sizing: border-box; justify-items: center;
   }
-  .offer-item { position: relative; left: auto; top: auto; width: auto; height: 200px; border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transform: none; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+  .offer-item {
+    position: relative; top: auto; left: auto; transform: none;
+    width: 100%; max-width: 300px; height: auto; min-height: 150px; border-radius: 12px; padding: 15px;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+  }
   .offer-item h3 { font-size: 20px; margin-bottom: 5px; }
   .offer-item p { font-size: 13px; }
 
   .gallery-container { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
   #galeria h2 { font-size: 36px; }
   .gallery-description { font-size: 16px; }
-
-  /* Sekcja "O nas" na mobile - obrazek pod tekstem i półprzezroczysty */
-  .section-about { flex-direction: column; text-align: center; }
-  .about-text { flex-basis: 100%; margin-bottom: 20px; }
-  .about-image-wrapper { flex-basis: 100%; min-height: auto; position: relative; }
-  .about-image { width: 80%; opacity: 0.5; }
-  .about-image-wrapper::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.2); z-index: 5; border-radius: 12px; }
 }
 
 @media (max-width: 480px) {
-  .balloons-container { grid-template-columns: 1fr; gap: 15px; }
-  .offer-item { height: auto; min-height: 150px; padding: 15px; }
+  .balloons-container { grid-template-columns: 1fr; gap: 15px; justify-items: center; }
+  .offer-item { position: relative !important; top: auto !important; left: auto !important; transform: none !important; width: 100%; max-width: 300px; height: auto; min-height: 150px; padding: 15px; }
+
   .gallery-container { grid-template-columns: 1fr; gap: 15px; }
   .gallery-item img { height: 200px; }
   .overlay { font-size: 18px; }
   .overlay i { font-size: 30px; }
+
+  /* O nas - obrazek za tekstem */
+  .section-about {
+    flex-direction: column; /* tekst nad obrazkiem */
+    gap: 20px;
+    text-align: center;
+  }
+  .about-text, .about-image-wrapper {
+    flex-basis: 100%;
+  }
+  .about-image-wrapper {
+    min-height: 0; /* usuwa ograniczenie wysokości */
+    display: flex; justify-content: center; /* wycentrowanie obrazka */
+
+  }
+  .about-image {
+    width: 80%; /* zachowujemy proporcje */
+    height: auto;
+  }
 }
