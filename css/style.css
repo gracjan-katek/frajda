@@ -259,3 +259,10 @@ header.nav-open .hamburger::after { transform: rotate(90deg) translate(0, -10px)
     height: auto;
   }
 }
+
+@media (max-width: 800px) {
+  .palma {
+    width: 18vw;
+    height: 33vw;
+  }
+}
