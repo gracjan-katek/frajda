@@ -218,6 +218,7 @@ header.nav-open .hamburger::after { transform: rotate(90deg) translate(0, -10px)
   .balloons-container {
     width: 100%; max-width: 1200px; height: auto; margin: 60px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 0 20px; box-sizing: border-box; justify-items: center;
   }
+
   .offer-item {
     position: relative; top: auto; left: auto; transform: none;
     width: 100%; max-width: 300px; height: auto; min-height: 150px; border-radius: 12px; padding: 15px;
