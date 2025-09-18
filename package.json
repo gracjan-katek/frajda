@@ -1,6 +1,6 @@
 {
   "name": "sala",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "private": false,
   "keywords": [],
@@ -24,3 +24,5 @@
   },
   "homepage": "https://gracjan-katek.github.io/frajda"
 }
+
+
