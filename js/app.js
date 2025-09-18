@@ -50,3 +50,38 @@ document.querySelectorAll("h2").forEach(h2 => {
     .map((ch, i) => `<span style="color:${colors[i % colors.length]}">${ch}</span>`)
     .join("");
 });
+
+const navAllColors = ["#2E9AE6", "#F7C71E", "#EE6DAF"];
+
+document.querySelectorAll(".hero-content h1").forEach(h1 => {
+  // sprawdzamy, czy nagłówek znajduje się w #kontakt
+  const isKontakt = h1.closest("#kontakt") !== null;
+
+  // jeśli w #kontakt -> bez żółtego
+  const colors = isKontakt
+    ? navAllColors.filter(c => c !== "#F7C71E")
+    : navAllColors;
+
+  // zamieniamy litery na <span> z kolorami (naprzemiennie)
+  h1.innerHTML = h1.textContent
+    .split("")
+    .map((ch, i) => `<span style="color:${colors[i % colors.length]}">${ch}</span>`)
+    .join("");
+});
+
+
+let colorIndex = 0;
+document.addEventListener("DOMContentLoaded", () => {
+  const menuItems = document.querySelectorAll("nav a");
+
+  menuItems.forEach(item => {
+    item.addEventListener("mouseenter", () => {
+      item.style.color = navAllColors[colorIndex];
+      colorIndex = (colorIndex + 1) % navAllColors.length;
+    });
+
+    item.addEventListener("mouseleave", () => {
+      item.style.color = ""; // wraca do koloru zdefiniowanego w CSS
+    });
+  });
+});

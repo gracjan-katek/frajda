@@ -45,11 +45,11 @@ header:not(.scrolled) .logo-link img {
 nav ul { list-style: none; margin: 0; margin-right: 100px; padding: 0; display: flex; }
 nav li { margin-left: 30px; }
 nav a {
-  text-decoration: none; color: #E67E22; font-weight: bold; font-size: 18px;
+  text-decoration: none; color: #4B4B4B; font-weight: bold; font-size: 18px;
   padding-bottom: 5px; border-bottom: 2px solid transparent;
   transition: color 0.3s, border-bottom 0.3s;
 }
-nav a:hover { color: #4B4B4B; border-bottom: 2px solid #E67E22; }
+nav a:hover { color: #EE6DAFFF;}/* border-bottom: 2px solid #FADADD; }*/
 
 /* --- Sekcja wideo --- */
 .hero-video {
@@ -67,11 +67,13 @@ nav a:hover { color: #4B4B4B; border-bottom: 2px solid #E67E22; }
   background-size: auto 100%;
   z-index: -1;
   pointer-events: none;
+  opacity: 0.95
 }
 .hero-video::after {
   content: '';
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0,0,0,0.4); z-index: -1;
+  background: rgba(0,0,0,0); /* usuwa czarną nakładkę */
+  z-index: -1;
 }
 #bgvideo {
   position: absolute; top: 50%; left: 50%;
@@ -87,7 +89,7 @@ nav a:hover { color: #4B4B4B; border-bottom: 2px solid #E67E22; }
 }
 .hero-content p { font-size: 1.5rem; }
 
-/* --- Palmy na dole wideo (w % mniejsze) --- */
+/* --- Palmy na dole wideo --- */
 .palma {
   position: absolute;
   bottom: 0;
@@ -136,7 +138,7 @@ nav a:hover { color: #4B4B4B; border-bottom: 2px solid #E67E22; }
 .offer-item:nth-of-type(3) { background-color: #f0f0f0; transform: translate(-50%,-50%) rotate(240deg) translateY(-240px) rotate(-240deg); }
 .offer-item h3 {
   font-family: 'Fredoka', sans-serif;
-  color: #E67E22;
+  color: #4F6C84; /* pastelowy zamiast pomarańczowego */
   font-size: 22px;
   margin: 0 0 10px;
 }
@@ -169,13 +171,13 @@ nav a:hover { color: #4B4B4B; border-bottom: 2px solid #E67E22; }
 .section { margin-bottom: 20px; }
 .section h2 {
   font-family: 'Fredoka', sans-serif;
-  color: #E67E22;
+  color: #BDD2E4; /* pastelowy zamiast pomarańczowego */
   font-size: 42px;
   margin-bottom: 20px;
 }
 hr { border: none; height: 2px; background-color: #EAEAEA; margin: 40px 0; }
 .separator { width: 100%; height: 280px; background: url('../img/przejscie.png') no-repeat center; background-size: cover; }
-.contact-div { padding:10%; margin: 0; background: #f9c223; }
+.contact-div { padding:10%; margin: 0; background: #BDD2E4; /* pastelowy zamiast #f9c223 */ }
 footer { background-color: #4B4B4B; color: #fff; text-align: center; padding: 30px; }
 
 /* --- Mobilne menu --- */
@@ -190,14 +192,14 @@ header.nav-open .hamburger::after { transform: rotate(90deg) translate(0, -10px)
 
 /* --- Galeria --- */
 #galeria { padding: 60px 20px; text-align: center; }
-#galeria h2 { font-family: 'Fredoka', sans-serif; color: #E67E22; font-size: 42px; margin-bottom: 20px; text-align: left; }
+#galeria h2 { font-family: 'Fredoka', sans-serif; color: #BDD2E4; font-size: 42px; margin-bottom: 20px; text-align: left; }
 .gallery-description { font-size: 18px; color: #666; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto; }
 .gallery-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
 .gallery-item { position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; display: block; }
 .gallery-item:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
 .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.4s ease-in-out; }
 .gallery-item:hover img { transform: scale(1.1); }
-.overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(230, 126, 34, 0.8); display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; font-size: 20px; font-weight: bold; opacity: 0; transition: opacity 0.3s ease-in-out; border-radius: 12px; }
+.overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(189, 210, 228, 0.8); display: flex; flex-direction: column; justify-content: center; align-items: center; color: #4F6C84; font-size: 20px; font-weight: bold; opacity: 0; transition: opacity 0.3s ease-in-out; border-radius: 12px; }
 .gallery-item:hover .overlay { opacity: 1; }
 .overlay span { margin-bottom: 10px; font-family: 'Fredoka', sans-serif; }
 .overlay i { font-size: 36px; margin-top: 5px; }
@@ -241,29 +243,14 @@ header.nav-open .hamburger::after { transform: rotate(90deg) translate(0, -10px)
   .overlay { font-size: 18px; }
   .overlay i { font-size: 30px; }
 
-  /* O nas - obrazek za tekstem */
   .section-about {
-    flex-direction: column; /* tekst nad obrazkiem */
-    gap: 20px;
-    text-align: center;
+    flex-direction: column; gap: 20px; text-align: center;
   }
-  .about-text, .about-image-wrapper {
-    flex-basis: 100%;
-  }
-  .about-image-wrapper {
-    min-height: 0; /* usuwa ograniczenie wysokości */
-    display: flex; justify-content: center; /* wycentrowanie obrazka */
-
-  }
-  .about-image {
-    width: 80%; /* zachowujemy proporcje */
-    height: auto;
-  }
+  .about-text, .about-image-wrapper { flex-basis: 100%; }
+  .about-image-wrapper { min-height: 0; display: flex; justify-content: center; }
+  .about-image { width: 80%; height: auto; }
 }
 
 @media (max-width: 800px) {
-  .palma {
-    width: 18vw;
-    height: 33vw;
-  }
+  .palma { width: 18vw; height: 33vw; }
 }
