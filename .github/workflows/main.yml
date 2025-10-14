@@ -34,7 +34,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /www         # folder docelowy na serwerze
+          server-dir: /www/         # folder docelowy na serwerze
           local-dir: ./dist/                 # folder zbudowany przez `npm run build`
           method: ftp                        # ftp | ftps | sftp
           exclude: |
