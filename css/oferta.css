@@ -1,0 +1,133 @@
+/* --- Style dla podstron Oferta i Urodziny --- */
+
+.subpage-hero {
+  padding: 150px 20px 80px;
+  text-align: center;
+  background: linear-gradient(135deg, #BDD2E4 0%, #a8c8e0 100%);
+  color: white;
+}
+
+.subpage-hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  margin: 0;
+}
+
+.subpage-hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+#cennik h2, #dodatkowe-atrakcje h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.price-item {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-bottom: 5px solid #76D7C4;
+}
+
+.price-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.price-item.hour {
+  border-bottom-color: #3BBFAD;
+}
+.price-item.full {
+  border-bottom-color: #2E9AE6;
+}
+.price-item.weekend {
+  border-bottom-color: #F7C71E;
+}
+.price-item.baby {
+  border-bottom-color: #EE6DAF;
+}
+
+.price-icon {
+  font-size: 40px;
+  color: #BDD2E4;
+  margin-bottom: 20px;
+}
+
+.price-item h3 {
+  font-family: 'Poppins', sans-serif;
+  color: #4F6C84;
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+
+.price-tag {
+  font-size: 36px;
+  font-weight: bold;
+  color: #4B4B4B;
+  margin: 15px 0;
+}
+
+.info-text {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+
+.extra-attractions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.attraction-item {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.attraction-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.attraction-item h3 {
+  font-family: 'Poppins', sans-serif;
+  color: #4F6C84;
+  font-size: 22px;
+  margin: 20px 0 10px;
+}
+
+.attraction-item p {
+  padding: 0 20px;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.attraction-price {
+  font-weight: bold;
+  color: #4B4B4B;
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .subpage-hero h1 {
+    font-size: 2.5rem;
+  }
+}

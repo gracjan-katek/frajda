@@ -1,0 +1,239 @@
+/* --- Styl dla podstrony urodzinowej -- */
+
+.subpage-hero {
+  padding: 150px 20px 80px;
+  text-align: center;
+  background: linear-gradient(135deg, #BDD2E4 0%, #a8c8e0 100%);
+  color: white;
+}
+
+.subpage-hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  margin: 0;
+}
+
+.subpage-hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+#pakiety h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.packages-grid {
+  display: grid; /* ZMIANA: Używamy siatki, co ułatwia wyrównanie */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  align-items: stretch; /* ZMIANA: Kluczowa właściwość do wyrównania wysokości */
+}
+
+.package-item {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex; /* ZMIANA: Ustawiamy flexbox dla lepszej kontroli nad zawartością */
+  flex-direction: column; /* ZMIANA: Układamy elementy (nagłówek, treść) w kolumnie */
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.package-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.popular-badge {
+  position: absolute;
+  /* ZMIANA: Zwiększamy szerokość, aby napis się nie zawijał */
+  width: 200px;
+  /* ZMIANA: Dostosowujemy pozycję góra/prawo, aby wstążka weszła w kadr */
+  top: 30px;
+  right: -50px;
+  background-color: #EE6DAF;
+  color: white;
+  /* ZMIANA: Ustalamy padding pionowy i zerujemy poziomy (kontrolujemy to szerokością) */
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: bold;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1;
+  /* ZMIANA: Wyśrodkowujemy tekst wewnątrz wstążki */
+  text-align: center;
+}
+
+.package-header {
+  padding: 45px 25px 45px 25px; /* ZMIANA: Zwiększony górny padding z 25px do 40px */
+  color: white;
+  text-align: center;
+  position: relative; /* Potrzebne, aby wstążka nie "uciekała" */
+}
+
+.package-header.silver { background: linear-gradient(135deg, #c4cdd3, #a7b4be); }
+.package-header.gold { background: linear-gradient(135deg, #f9d423, #f8c224); }
+.package-header.diamond { background: linear-gradient(135deg, #89f7fe, #66a6ff); }
+
+
+.package-header h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  margin: 0 0 5px;
+}
+
+.package-price {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.package-body {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* ZMIANA: To sprawia, że ta sekcja "rośnie", wypychając przycisk na dół i wyrównując wysokość boksów */
+}
+
+.package-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  flex-grow: 1; /* ZMIANA: Lista również rośnie, aby wypełnić dostępną przestrzeń */
+}
+
+.package-body ul li {
+  margin-bottom: 15px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.package-body ul li i {
+  color: #76D7C4;
+  margin-right: 10px;
+  font-size: 18px;
+}
+.package-body ul li i.fa-star { color: #f9c223; }
+.package-body ul li i.fa-gem { color: #66a6ff; }
+
+
+.btn {
+  display: inline-block;
+  background-color: #EE6DAF;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: auto; /* ZMIANA: Wypycha przycisk na sam dół */
+}
+
+.btn:hover {
+  background-color: #d65c99;
+  transform: scale(1.05);
+}
+
+.info-text {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .subpage-hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* --- Style do zaktualizowanej oferty urodzinowej --- */
+
+.package-info {
+  font-size: 0.9em;
+  font-weight: normal;
+  color: #f0f0f0;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+ul.meal-options {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+ul.meal-options li {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+ul.meal-options i {
+  margin-right: 8px;
+  font-size: 0.8em;
+  color: #f0c420; /* Kolor pasujący do pakietu Złotego */
+}
+
+.section-divider {
+  border: none;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 40px auto;
+  width: 80%;
+}
+
+.extras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.extra-item {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.extra-item h4 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 22px;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #fde0e0;
+  padding-bottom: 10px;
+}
+
+.extra-item h4 i {
+  margin-right: 10px;
+  color: #EE6DAF; /* Kolor z Twojej palety */
+}
+
+.extra-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.extra-item li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.extra-item li strong {
+  color: #333;
+}
+
+.small-info {
+  font-size: 0.85em;
+  color: #777;
+  padding-left: 15px;
+}

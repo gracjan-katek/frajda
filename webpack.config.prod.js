@@ -9,6 +9,18 @@ module.exports = merge(common, {
     new HtmlWebpackPlugin({
       template: './index.html',
     }),
+    new HtmlWebpackPlugin({
+      template: './galeria.html',
+      filename: 'galeria.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './urodziny.html',
+      filename: 'urodziny.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './oferta.html',
+      filename: 'oferta.html',
+    }),
     new CopyPlugin({
       patterns: [
         { from: 'img', to: 'img' },
